@@ -1,0 +1,16 @@
+name: ci-post-pr
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+jobs:
+  ci:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump Github context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo $GITHUB_CONTEXT
