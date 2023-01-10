@@ -2,7 +2,7 @@ name: ci-pre-pr
 on:
   pull_request:
     types:
-      - oepnd
+      - opened
     branches:
       - main
 jobs:
