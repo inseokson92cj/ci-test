@@ -1,6 +1,8 @@
 name: ci-pre-pr
 on:
   pull_request:
+    types:
+      - oepn
     branches:
       - main
 jobs:
